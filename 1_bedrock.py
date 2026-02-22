@@ -1,12 +1,12 @@
 import boto3
 
-def get_client():
+def get_bedrock_client():
     session = boto3.Session(profile_name="sandbox")
-    client = session.client("bedrock-runtime")
-    return client
+    bedrock = session.client("bedrock-runtime")
+    return bedrock
 
-def invoke_bedrock(client, input):
-    response = client.converse(
+def invoke_bedrock(bedrock, input):
+    response = bedrock.converse(
         modelId="us.anthropic.claude-3-7-sonnet-20250219-v1:0",
         messages=[
             {
@@ -19,8 +19,8 @@ def invoke_bedrock(client, input):
     return response_text
 
 def main(input):
-    client = get_client()
-    response_text = invoke_bedrock(client, input)
+    bedrock = get_bedrock_client()
+    response_text = invoke_bedrock(bedrock, input)
     print(response_text)
     return
 

@@ -19,10 +19,8 @@ def get_truth(word): # 追加
     dataset = langfuse.get_dataset("main")
     truth = ""
     for item in dataset.items:
-        print(item.input) # デバッグ
         if item.input["text"] == word:
             truth = item.expected_output
-            print(truth) # デバッグ
     return truth
 
 @observe()
