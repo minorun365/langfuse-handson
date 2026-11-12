@@ -18,3 +18,7 @@ Langfuse のキーを環境変数（LANGFUSE_PUBLIC_KEY・LANGFUSE_SECRET_KEY・
 pip install boto3 "langfuse<3"
 python 1_bedrock.py
 ```
+
+## ライセンス
+
+MIT Licenseです。詳細は [LICENSE](./LICENSE) を参照してください。
